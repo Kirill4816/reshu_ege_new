@@ -3,7 +3,7 @@
 # Из набора нужно выбрать три числа, сумма которых делится на 3.
 # Какую наибольшую сумму можно при этом получить?
 
-with open('27-B (2).txt', 'r') as file:
+with open('27-A (2).txt', 'r') as file:
     numbers = file.readlines()
 
 # numbers = tuple(map(int, numbers[1:]))

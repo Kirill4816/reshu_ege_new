@@ -8,7 +8,7 @@ with open('24 (1).txt', 'r') as file:
 letters = {}
 
 for string in strings:
-    for i in range(1, len(string) - 1):
+    for i in range(len(string) - 1):
         if string[i - 1] == string[i + 1]:
             if string[i] not in letters:
                 letters[string[i]] = 1
