@@ -9,7 +9,6 @@ max_num_14 = 0
 max_num = 0
 
 for number in numbers[1:]:
-    cur_max_num = 0
     if number % 2 == 0 and number % 7 != 0 and number > max_num_2:
         max_num_2 = number
     if number % 7 == 0 and number > max_num_7 and number != max_num_2:
