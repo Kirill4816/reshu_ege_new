@@ -26,18 +26,30 @@ for weight in weights[:]:
     else:
         break
 removed_weights = removed_weights[::-1]
-for last_weight in removed_weights[:]:
-    if lifting_capacity > 0:
-        lifting_capacity -= last_weight
-        for weight in weights[:]:
-            if weight < lifting_capacity:
-                removed_weights.remove(last_weight)
-                weights.remove(weight)
-                removed_weights.insert(0, weight)
-                weights.insert(0, last_weight)
-                last_weight = weight
-            else:
-                break
-        lifting_capacity += last_weight
+
+for _ in range(len(removed_weights)):
+    max_removed = max(removed_weights)
+    removed_weights.remove(max_removed)
+    weights.sort()
+    for weight in weights[::-1]:
+        if lifting_capacity - weight + max_removed >= 0:
+            lifting_capacity = lifting_capacity - weight + max_removed
+            weights.append(max_removed)
+            break
+
+
+# for last_weight in removed_weights[:]:
+#     if lifting_capacity >= 0:
+#         lifting_capacity -= last_weight
+#         for weight in weights[:]:
+#             if weight <= lifting_capacity:
+#                 removed_weights.remove(last_weight)
+#                 weights.remove(weight)
+#                 removed_weights.insert(0, weight)
+#                 weights.insert(0, last_weight)
+#                 last_weight = weight
+#             else:
+#                 break
+#         lifting_capacity += last_weight
 
 print(cnt_weights, begin_lifting_capacity - lifting_capacity)
