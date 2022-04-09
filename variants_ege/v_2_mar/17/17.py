@@ -36,3 +36,5 @@ for num in numbers:
             cnt_even += 1
         if not is_used and num > max_num_even:
             max_num_even = num
+
+cnt = 
