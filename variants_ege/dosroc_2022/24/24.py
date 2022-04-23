@@ -27,7 +27,7 @@ for symbol in string:
 if cur_len > max_len:
     max_len = cur_len
 
-print(max_len)
+print(max_len // 2)
 
 
 # for i in range(1, 100000):
