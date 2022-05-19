@@ -16,4 +16,3 @@ for number in range(first_num, second_num + 1):
                 dividers.append(div_2)
     if len(dividers) == 5:
         print(number)
-        print(dividers)
